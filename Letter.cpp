@@ -22,6 +22,6 @@ private:
 
 };
 AlphaZ::AlphaZ(int x, int y, int k): Figure(x, y, k) {
-//    lines.push_back(
-        HorizonLine(x, y, k);
+    Line *newLine = new HorizonLine(x, y, k);
+    lines.push_back(newLine);
 }
