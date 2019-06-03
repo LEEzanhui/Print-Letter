@@ -16,7 +16,18 @@ HorizonLine::HorizonLine(int x, int begY, int endY): Line(x, x, begY, endY) {}
 void HorizonLine::print(int initX, int initY, int k) const {
     setpos(initX, initY);
     int i;
-    for(i = begY; i< 9 * k; i++) {
+    for(i = begY; i< (endY-begY) * k; i++) {
         std::cout << fChar;
     }
 };
+/*
+VerticalLine::VerticalLine(int begX, int endX, int Y): Line(begX, endX, Y, Y) {}
+
+void VerticalLine::print(int initX, int initY, int k) const {
+    int i;
+    for(i = begX; i< (endX-endY) * k; i++) {
+        setpos(initX, initY);
+        std::cout << fChar;
+    }
+}
+*/

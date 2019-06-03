@@ -3,6 +3,8 @@
 #include <iostream>
 #include <windows.h>
 
+//各种直线是否只保存长度
+
 void setpos(short int x, short int y);
 
 class Pattern {
@@ -27,6 +29,14 @@ public:
 private:
 };
 
+class VerticalLine: public Line {
+public:
+    VerticalLine(int begX, int endX, int Y);
+    void print const(int initX, int initY, int k);
+private:
+
+};
+
 /*
 class DiagonalLine: public Line {
 public:
@@ -37,16 +47,6 @@ private:
 };
 DiagonalLine::DiagonalLine(int begX, int endX, int begY, int endY):
 begX(begX), endX(endX), begY(begY), endY(endY) {}
-
-class VerticalLine: public Line {
-public:
-    VerticalLine();
-    void print const();
-private:
-
-};
-VerticalLine::VerticalLine(int begX, int endX, int Y):
-begX(begX), endX(endX), begY(Y), endY(Y) {}
 
 class AntiDiagonalLine(): public Line {
 public:
