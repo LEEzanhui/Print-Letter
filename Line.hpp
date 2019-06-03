@@ -1,22 +1,18 @@
+#ifndef LINE_HPP
+#define LINE_HPP
 #include <iostream>
 #include <windows.h>
 
-using namespace std;
+void setpos(short int x, short int y);
 
-void setpos(int x,int y){
-    COORD point={x,y};
-    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleCursorPosition(handle, point);
-}
-class Shape {
+class Pattern {
 public:
     virtual void print(int initX, int initY, int k) const =0;
 protected:
     static char fChar;
 };
-char Shape::fChar = '*';
 
-class Line: public Shape {
+class Line: public Pattern {
 public:
     Line(int begX, int endX, int begY, int endY);
     virtual void print(int initX, int initY, int k) const =0;
@@ -24,28 +20,13 @@ protected:
     int begX, begY, endX, endY;
 };
 
-Line::Line(int begX, int endX, int begY, int endY) {
-    this->begX = begX;
-    this->begY = begY;
-    this->endX = endX;
-    this->endY = endY;
-}
-
 class HorizonLine: public Line {
 public:
     HorizonLine(int x, int begY, int endY);
     void print(int initX, int initY, int k) const;
 private:
 };
-HorizonLine::HorizonLine(int x, int begY, int endY): Line(x, x, begY, endY){}
 
-void HorizonLine::print(int initX, int initY, int k) const {
-    setpos(initX, initY);
-    int i;
-    for(i = begY; i< 9 * k; i++) {
-        cout << fChar;
-    }
-};
 /*
 class DiagonalLine: public Line {
 public:
@@ -55,7 +36,7 @@ private:
 
 };
 DiagonalLine::DiagonalLine(int begX, int endX, int begY, int endY):
-    begX(begX), endX(endX), begY(begY), endY(endY) {}
+begX(begX), endX(endX), begY(begY), endY(endY) {}
 
 class VerticalLine: public Line {
 public:
@@ -65,7 +46,7 @@ private:
 
 };
 VerticalLine::VerticalLine(int begX, int endX, int Y):
-    begX(begX), endX(endX), begY(Y), endY(Y) {}
+begX(begX), endX(endX), begY(Y), endY(Y) {}
 
 class AntiDiagonalLine(): public Line {
 public:
@@ -75,7 +56,7 @@ private:
 
 };
 AntiDiagonal::AntiDiagonal(int begX, int endX, int begY, int endY):
-    begX(begX), endX(endX), begY(begY), endY(endY) {}{}
+begX(begX), endX(endX), begY(begY), endY(endY) {}{}
+*/
 
-
-    */
+#endif /* end of include guard: LINE_HPP */
