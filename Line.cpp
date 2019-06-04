@@ -40,3 +40,13 @@ void DiagonalLine::print(int initX, int initY, int k) const {
         std::cout << fChar;
     }
 }
+
+AntiDiagonalLine::AntiDiagonalLine(int endX, int endY): Line(endX, endY) {}
+
+void AntiDiagonalLine::print(int initX, int initY, int k) const {
+    int i;
+    for(i = 0; i < endX * k; i++) {
+        setpos(initX - i, initY + i);
+        std::cout << fChar;
+    }
+}

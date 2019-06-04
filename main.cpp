@@ -5,7 +5,7 @@
 
 int main(int argc, char const *argv[]) {
     AlphaZ a;
-    a.print(1, 1, 5);
+    a.print(1, 1, 3);
     return 0;
 }
 

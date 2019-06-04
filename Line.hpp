@@ -45,16 +45,15 @@ public:
 private:
 
 };
-/*
-class AntiDiagonalLine(): public Line {
+
+class AntiDiagonalLine: public Line {
 public:
-    AntiDiagonal();
-    void print const();
+    AntiDiagonalLine(int endX, int endY);
+    void print(int initX, int initY, int k) const;
 private:
 
 };
-AntiDiagonal::AntiDiagonal(int begX, int endX, int begY, int endY):
-begX(begX), endX(endX), begY(begY), endY(endY) {}{}
 
-*/
+
+
 #endif /* end of include guard: LINE_HPP */
