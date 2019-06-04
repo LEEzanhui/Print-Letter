@@ -5,17 +5,17 @@
 
 class Figure: public Pattern {
 public:
-    Figure(int x, int y, int k);
+    Figure();
     void print(int initX, int initY, int k) const =0;
 protected:
     std::vector<Line*> lines;
-    int x, y, k;
+//    int x, y, k;
 };
 
 class AlphaZ: public Figure {
 public:
-    AlphaZ(int x, int y, int k);
-    void print(int initX, int initY, int k) const {}
+    AlphaZ();
+    void print(int x, int y, int k) const;
 private:
 
 };

@@ -1,10 +1,18 @@
 #include "Letter.hpp"
 
-Figure::Figure(int x, int y, int k) {
-    this->x = x;
-    this->y = y;
+#include<windows.h>
+Figure::Figure() {
+
 }
 
-AlphaZ::AlphaZ(int x, int y, int k): Figure(x, y, k) {
-    lines.push_back(new HorizonLine(x, y, k) );
+AlphaZ::AlphaZ() {
+    lines.push_back(new HorizonLine(0, 4) );
+    lines.push_back(new DiagonalLine(4, 4) );
+    lines.push_back(new HorizonLine(0, 4) );
+}
+
+void AlphaZ::print(int x, int y, int k) const {
+    lines[0]->print(x, y, k);
+    lines[1]->print(x, y, k);
+    lines[2]->print(x, y + 4*k -1, k);
 }

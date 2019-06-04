@@ -16,38 +16,36 @@ protected:
 
 class Line: public Pattern {
 public:
-    Line(int begX, int endX, int begY, int endY);
+    Line(int endX, int endY);
     virtual void print(int initX, int initY, int k) const =0;
 protected:
-    int begX, begY, endX, endY;
+    int endX, endY;
 };
 
 class HorizonLine: public Line {
 public:
-    HorizonLine(int x, int begY, int endY);
+    HorizonLine(int endX, int endY);
     void print(int initX, int initY, int k) const;
 private:
 };
 
 class VerticalLine: public Line {
 public:
-    VerticalLine(int begX, int endX, int Y);
-    void print const(int initX, int initY, int k);
+    VerticalLine(int endX, int endY);
+    void print (int initX, int initY, int k) const;
 private:
 
 };
 
-/*
+
 class DiagonalLine: public Line {
 public:
-    DiagonalLine();
-    void print const();
+    DiagonalLine(int endX, int endY);
+    void print(int initX, int initY, int k) const;
 private:
 
 };
-DiagonalLine::DiagonalLine(int begX, int endX, int begY, int endY):
-begX(begX), endX(endX), begY(begY), endY(endY) {}
-
+/*
 class AntiDiagonalLine(): public Line {
 public:
     AntiDiagonal();
@@ -57,6 +55,6 @@ private:
 };
 AntiDiagonal::AntiDiagonal(int begX, int endX, int begY, int endY):
 begX(begX), endX(endX), begY(begY), endY(endY) {}{}
-*/
 
+*/
 #endif /* end of include guard: LINE_HPP */

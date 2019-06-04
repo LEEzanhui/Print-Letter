@@ -8,26 +8,35 @@ void setpos(short int x, short int y) {
 
 char Pattern::fChar = '*';
 
-Line::Line(int begX, int endX, int begY, int endY):
-    begX(begX), endX(endX), begY(begY), endY(endY) {}
+Line::Line(int endX, int endY):
+    endX(endX), endY(endY) {}
 
-HorizonLine::HorizonLine(int x, int begY, int endY): Line(x, x, begY, endY) {}
+HorizonLine::HorizonLine(int endX, int endY): Line(0, endY) {}
 
 void HorizonLine::print(int initX, int initY, int k) const {
     setpos(initX, initY);
     int i;
-    for(i = begY; i< (endY-begY) * k; i++) {
+    for(i = 0; i< endY * k; i++) {
         std::cout << fChar;
     }
 };
-/*
-VerticalLine::VerticalLine(int begX, int endX, int Y): Line(begX, endX, Y, Y) {}
+
+VerticalLine::VerticalLine( int endX, int endY): Line(endX, 0) {}
 
 void VerticalLine::print(int initX, int initY, int k) const {
     int i;
-    for(i = begX; i< (endX-endY) * k; i++) {
-        setpos(initX, initY);
+    for(i = 0; i < endX * k; i++) {
+        setpos(initX, initY + i);
         std::cout << fChar;
     }
 }
-*/
+
+DiagonalLine::DiagonalLine(int endX, int endY): Line(endX, endY) {}
+
+void DiagonalLine::print(int initX, int initY, int k) const {
+    int i;
+    for(i=0; i < endX * k; i++) {
+        setpos(initX + i, initY + i);
+        std::cout << fChar;
+    }
+}
