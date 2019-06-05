@@ -11,8 +11,8 @@ char Pattern::fChar = '*';
 Line::Line(int endX, int endY):
     endX(endX), endY(endY) {}
 
-HorizonLine::HorizonLine(int endX, int endY): Line(0, endY) {}
-
+HorizonLine::HorizonLine(int endX, int endY):
+    Line(0, endY) {}
 void HorizonLine::print(int initX, int initY, int k) const {
     setpos(initX, initY);
     int i;
@@ -21,8 +21,9 @@ void HorizonLine::print(int initX, int initY, int k) const {
     }
 };
 
-VerticalLine::VerticalLine( int endX, int endY): Line(endX, 0) {}
 
+VerticalLine::VerticalLine( int endX, int endY):
+    Line(endX, 0) {}
 void VerticalLine::print(int initX, int initY, int k) const {
     int i;
     for(i = 0; i < endX * k; i++) {
@@ -31,8 +32,9 @@ void VerticalLine::print(int initX, int initY, int k) const {
     }
 }
 
-DiagonalLine::DiagonalLine(int endX, int endY): Line(endX, endY) {}
 
+DiagonalLine::DiagonalLine(int endX, int endY):
+    Line(endX, endY) {}
 void DiagonalLine::print(int initX, int initY, int k) const {
     int i;
     for(i=0; i < endX * k; i++) {
@@ -41,12 +43,44 @@ void DiagonalLine::print(int initX, int initY, int k) const {
     }
 }
 
-AntiDiagonalLine::AntiDiagonalLine(int endX, int endY): Line(endX, endY) {}
 
+AntiDiagonalLine::AntiDiagonalLine(int endX, int endY):
+    Line(endX, endY) {}
 void AntiDiagonalLine::print(int initX, int initY, int k) const {
     int i;
     for(i = 0; i < endX * k; i++) {
         setpos(initX - i, initY + i);
+        std::cout << fChar;
+    }
+}
+
+
+ObliqueLine::ObliqueLine(int endX, int endY):
+    Line(endX, endY), theta(atan((double)endY/endX) ) {}
+void ObliqueLine::print(int initX, int initY, int k) const {
+    if(endX > endY)
+      for(int x = 0; x < endX * k; x++) {
+          setpos(initX + x + 0.5, initY + x*tan(theta) + 0.5);
+          //+0.5 实现四舍五入
+          std::cout << fChar;
+      }
+    else for(int y = 0; y < endY * k; y++) {
+        setpos(initX + y/tan(theta) + 0.5, initY + y + 0.5);
+        std::cout << fChar;
+    }
+}
+
+AntiObliqueLine::AntiObliqueLine(int endX, int endY):
+    Line(endX, endY), theta(atan((double)endY/endX) ) {}
+void AntiObliqueLine::print(int initX, int initY, int k) const {
+    if(endX > endY)
+      for(int x = 0; x < endX * k; x++) {
+          setpos(initX - x + 0.5, initY + x*tan(theta) + 0.5);
+          //+0.5 实现四舍五入
+          std::cout << fChar;
+      }
+    else for(int y = 0; y < endY * k; y++) {
+        setpos(initX - y/tan(theta) + 0.5, initY + y + 0.5);
         std::cout << fChar;
     }
 }

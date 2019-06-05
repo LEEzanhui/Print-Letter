@@ -9,15 +9,13 @@ public:
     void print(int initX, int initY, int k) const =0;
 protected:
     std::vector<Line*> lines;
-//    int x, y, k;
 };
 
+//standard size is 9*9
 class AlphaZ: public Figure {
 public:
     AlphaZ();
     void print(int x, int y, int k) const;
-private:
-
 };
 
 #endif /* end of include guard: LETTER_HPP */
