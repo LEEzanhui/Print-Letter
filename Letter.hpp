@@ -1,7 +1,7 @@
 #ifndef LETTER_HPP
 #define LETTER_HPP
 #include <vector>
-#include "Line.hpp"
+#include "Line.cpp"
 
 class Figure: public Pattern {
 public:

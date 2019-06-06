@@ -4,6 +4,8 @@
 #include <windows.h>
 #include <cmath>
 
+#define PI 3.14159265
+
 //x: col, y: row
 void setpos(short int x, short int y);
 
@@ -59,5 +61,18 @@ public:
 private:
     double theta;
 };
+
+class CircleArc: public Pattern {
+public:
+    CircleArc(int begDeg, int endDeg, int rad);
+    void print(int x0, int y0, int k) const;
+private:
+    int begDeg, endDeg, rad;
+};
+class Circle: public CircleArc {
+public:
+    Circle(int rad);
+};
+
 
 #endif /* end of include guard: LINE_HPP */

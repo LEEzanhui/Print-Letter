@@ -8,8 +8,10 @@ void setpos(short int x, short int y) {
 
 char Pattern::fChar = '*';
 
+
 Line::Line(int endX, int endY):
     endX(endX), endY(endY) {}
+
 
 HorizonLine::HorizonLine(int endX, int endY):
     Line(0, endY) {}
@@ -20,7 +22,6 @@ void HorizonLine::print(int initX, int initY, int k) const {
         std::cout << fChar;
     }
 };
-
 
 VerticalLine::VerticalLine( int endX, int endY):
     Line(endX, 0) {}
@@ -43,7 +44,6 @@ void DiagonalLine::print(int initX, int initY, int k) const {
     }
 }
 
-
 AntiDiagonalLine::AntiDiagonalLine(int endX, int endY):
     Line(endX, endY) {}
 void AntiDiagonalLine::print(int initX, int initY, int k) const {
@@ -61,7 +61,7 @@ void ObliqueLine::print(int initX, int initY, int k) const {
     if(endX > endY)
       for(int x = 0; x < endX * k; x++) {
           setpos(initX + x + 0.5, initY + x*tan(theta) + 0.5);
-          //+0.5 实现四舍五入
+          // + 0.5 实现四舍五入
           std::cout << fChar;
       }
     else for(int y = 0; y < endY * k; y++) {
@@ -84,3 +84,16 @@ void AntiObliqueLine::print(int initX, int initY, int k) const {
         std::cout << fChar;
     }
 }
+
+
+CircleArc::CircleArc(int begDeg, int endDeg, int rad):
+    begDeg(begDeg), endDeg(endDeg), rad(rad) {}
+void CircleArc::print(int x0, int y0, int k) const {
+    int i;
+    for(i = begDeg; i < endDeg; i++) {
+        setpos(x0 + rad*sin(i*PI/180.0) + 0.5, y0 - rad*cos(i*PI/180.0) + 0.5);
+        std::cout << fChar;
+    }
+}
+
+Circle::Circle(int rad): CircleArc(0, 360, rad) {}
