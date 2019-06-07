@@ -9,14 +9,17 @@
 //x: col, y: row
 void setpos(short int x, short int y);
 
+// num1, num2 are used to decide the location of a pattern,
+// k is used to describe the size
+// In the line class, they means the coordinate of bottom right hand corner
+// In the CircleArc class, they means the coordinate of center
 class Pattern {
 public:
-    virtual void print(int initX, int initY, int k) const =0;
+    virtual void print(int num1, int num2, int k) const =0;
 protected:
     static char fChar;
 };
 
-//各直线默认从(0, 0)开始，endX和endY保存直线所构成矩阵的右下角位置
 class Line: public Pattern {
 public:
     Line(int endX, int endY);

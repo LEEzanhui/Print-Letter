@@ -1,5 +1,6 @@
 #include "Line.hpp"
 
+//x: col, y: row
 void setpos(short int x, short int y) {
     COORD point={x,y};
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -9,12 +10,10 @@ void setpos(short int x, short int y) {
 char Pattern::fChar = '*';
 
 
-Line::Line(int endX, int endY):
-    endX(endX), endY(endY) {}
+Line::Line(int endX, int endY): endX(endX), endY(endY) {}
 
 
-HorizonLine::HorizonLine(int endX, int endY):
-    Line(0, endY) {}
+HorizonLine::HorizonLine(int endX, int endY): Line(1, endY) {}
 void HorizonLine::print(int initX, int initY, int k) const {
     setpos(initX, initY);
     int i;
@@ -23,8 +22,7 @@ void HorizonLine::print(int initX, int initY, int k) const {
     }
 };
 
-VerticalLine::VerticalLine( int endX, int endY):
-    Line(endX, 0) {}
+VerticalLine::VerticalLine(int endX, int endY): Line(endX, 1) {}
 void VerticalLine::print(int initX, int initY, int k) const {
     int i;
     for(i = 0; i < endX * k; i++) {
@@ -34,8 +32,7 @@ void VerticalLine::print(int initX, int initY, int k) const {
 }
 
 
-DiagonalLine::DiagonalLine(int endX, int endY):
-    Line(endX, endY) {}
+DiagonalLine::DiagonalLine(int endX, int endY): Line(endX, endY) {}
 void DiagonalLine::print(int initX, int initY, int k) const {
     int i;
     for(i=0; i < endX * k; i++) {
@@ -44,8 +41,7 @@ void DiagonalLine::print(int initX, int initY, int k) const {
     }
 }
 
-AntiDiagonalLine::AntiDiagonalLine(int endX, int endY):
-    Line(endX, endY) {}
+AntiDiagonalLine::AntiDiagonalLine(int endX, int endY): Line(endX, endY) {}
 void AntiDiagonalLine::print(int initX, int initY, int k) const {
     int i;
     for(i = 0; i < endX * k; i++) {
@@ -91,7 +87,7 @@ CircleArc::CircleArc(int begDeg, int endDeg, int rad):
 void CircleArc::print(int x0, int y0, int k) const {
     int i;
     for(i = begDeg; i < endDeg; i++) {
-        setpos(x0 + rad*sin(i*PI/180.0) + 0.5, y0 - rad*cos(i*PI/180.0) + 0.5);
+        setpos(x0 + k*rad*sin(i*PI/180.0) + 0.5, y0 - k*rad*cos(i*PI/180.0) + 0.5);
         std::cout << fChar;
     }
 }
