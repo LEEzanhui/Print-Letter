@@ -6,6 +6,7 @@
 class Figure: public Pattern {
 public:
     void print(int initX, int initY, int k) const =0;
+//    void printInfo(int initX, int initY, int k) const =0;
 protected:
     std::vector<Pattern *> lines;
 };
@@ -14,6 +15,18 @@ protected:
 class AlphaZ: public Figure {
 public:
     AlphaZ();
+    void print(int x, int y, int k) const;
+};
+
+class AlphaY: public Figure {
+public:
+    AlphaY();
+    void print(int x, int y, int k) const;
+};
+
+class AlphaO: public Figure {
+public:
+    AlphaO();
     void print(int x, int y, int k) const;
 };
 
