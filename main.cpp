@@ -19,7 +19,7 @@ char legalInput(int min, int max) {
     return input;
 }
 
-void printLetter(int initX, string str, int i) {
+void printLetter(int initX, string str, int i, int k) {
     switch(str[i]) {
         case 'z':break;
     }
@@ -47,13 +47,13 @@ void letterMode() {
     cin >> str;
 
     cout << "plz enter the size of the letter (plz enter int)" << '\n';
-
+//change initX and size here
     int size;
 
     int i=0;
     int initX=0;
     for(; i < str.length(); i++, initX += size*9) {
-        printLetter(initX, str, i);
+        printLetter(initX, str, i, size);
     }
 
     cout << "enter any key to return";
