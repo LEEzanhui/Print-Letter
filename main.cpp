@@ -19,14 +19,56 @@ char legalInput(int min, int max) {
     return input;
 }
 
-void printLetter(int initX, string str, int i, int k) {
+void printLetter(int initX, int initY, string str, int i, double k) {
     switch(str[i]) {
-        case 'z':break;
+        case 'z':{
+            AlphaZ z;
+            z.print(initX, initY, k);
+            }
+            break;
+        case 'l':{
+            AlphaL l;
+            l.print(initX, initY, k);
+            }
+            break;
+        case 'y':{
+            AlphaY y;
+            y.print(initX, initY, k);
+            }
+            break;
+        case 'k':{
+            AlphaK tk;
+            tk.print(initX, initY, k);
+            }
+            break;
+    }
+}
+
+bool shift(int* PinitX, int* PinitY, double* PsizeLe) {
+    char ch = getch();
+
+    switch(ch) {
+        case '\x1B':system("cls");
+            return false;
+        case 'a':(*PsizeLe) /= 1.1;
+            return true;
+        case 'd':(*PsizeLe) *= 1.1;
+            return true;
+        case 72:(*PinitY)--;
+            return true;
+        case 80:(*PinitY)++;
+            return true;
+        case 75:(*PinitX)--;
+            return true;
+        case 77:(*PinitX)++;
+            return true;
     }
 }
 
 void figureMode() {
     cout << "choose which figure you want to..." << '\n';
+    cout << "1 star" << '\n';
+    cout << "2 tri" << '\n';
     while(1) {
         char fig = legalInput(1, 5);
 
@@ -35,43 +77,60 @@ void figureMode() {
         }
 
         switch( fig-'0' ) {
-            case 1: cout << "!";
+            case 1: cout << "star" << '\n';
+                break;
+            case 2: cout << "tri" << '\n';
+                break;
+            default:break;
         }
     }
 }
 
 void letterMode() {
     cout << "choose which letter you want to..." << '\n';
+    cout << "L Y K N B" << '\n';
 
     string str;
     cin >> str;
 
-    cout << "plz enter the size of the letter (plz enter int)" << '\n';
 //change initX and size here
-    int size;
+    double sizeLe = 1.0;
 
-    int i=0;
-    int initX=0;
-    for(; i < str.length(); i++, initX += size*9) {
-        printLetter(initX, str, i, size);
+    int initX = 0;
+    int initY = 2;
+
+    bool flag = true;
+
+    for(; flag; ) {
+        system("cls");
+
+        cout << "direction keys control the position, a/d key control the size" << '\n';
+        cout << "press esc to return" << '\n';
+
+        int charX = initX;
+        int charY = initY;
+        for(int i=0; i < str.length(); i++ ) {
+            printLetter(charX, charY, str, i, sizeLe);
+            charX += sizeLe*10;
+        }
+
+        flag = shift(&initX, &initY, &sizeLe);
     }
 
-    cout << "enter any key to return";
-    getch();
 }
 
 void test();
 int main(int argc, char const *argv[]) {
-    test();
-    /*
-    cout << "��ӭ";
-    system("cls");
+    //test();
+
+    //cout << "welcome";
+    //system("cls");
 
     while(1) {
-        cout << "model 1" << '\n';
-        cout << "print some figures" << '\n';
-        cout << "model 2" << '\n';
-        cout << "print letter" << '\n';
+        cout << "Model 1" << '\n';
+        cout << "    print some figures" << '\n';
+        cout << "Model 2" << '\n';
+        cout << "    print some letters" << '\n';
         char input = legalInput(1, 2);
 
         if(input-'0' == 1) {
@@ -81,8 +140,6 @@ int main(int argc, char const *argv[]) {
             letterMode();
         }
     }
-    */
-
 
     return 0;
 }
