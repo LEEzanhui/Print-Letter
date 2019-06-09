@@ -67,7 +67,7 @@ bool shift(int* PinitX, int* PinitY, double* PsizeLe) {
 
 void figureMode() {
     cout << "choose which figure you want to..." << '\n';
-    cout << "1 star" << '\n';
+    cout << "1 circle" << '\n';
     cout << "2 tri" << '\n';
     while(1) {
         char fig = legalInput(1, 5);
@@ -77,7 +77,10 @@ void figureMode() {
         }
 
         switch( fig-'0' ) {
-            case 1: cout << "star" << '\n';
+            case 1:{
+                AlphaO o;
+                o.print(44, 0, 1);
+                }
                 break;
             case 2: cout << "tri" << '\n';
                 break;
