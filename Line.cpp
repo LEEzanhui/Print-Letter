@@ -13,19 +13,19 @@ char Pattern::fChar = '*';
 Line::Line(int endX, int endY): endX(endX), endY(endY) {}
 
 
-HorizonLine::HorizonLine(int endX, int endY): Line(1, endY) {}
-void HorizonLine::print(int initX, int initY, int k) const {
+HorizonLine::HorizonLine(int endX, int endY): Line(endX, 0) {}
+void HorizonLine::print(int initX, int initY, double k) const {
     setpos(initX, initY);
     int i;
-    for(i = 0; i <= endY * k; i++) {
+    for(i = 0; i <= endX * k; i++) {
         std::cout << fChar;
     }
 };
 
-VerticalLine::VerticalLine(int endX, int endY): Line(endX, 1) {}
-void VerticalLine::print(int initX, int initY, int k) const {
+VerticalLine::VerticalLine(int endX, int endY): Line(0, endY) {}
+void VerticalLine::print(int initX, int initY, double k) const {
     int i;
-    for(i = 0; i <= endX * k; i++) {
+    for(i = 0; i <= endY * k; i++) {
         setpos(initX, initY + i);
         std::cout << fChar;
     }
@@ -33,7 +33,7 @@ void VerticalLine::print(int initX, int initY, int k) const {
 
 
 DiagonalLine::DiagonalLine(int endX, int endY): Line(endX, endY) {}
-void DiagonalLine::print(int initX, int initY, int k) const {
+void DiagonalLine::print(int initX, int initY, double k) const {
     int i;
     for(i=0; i <= endX * k; i++) {
         setpos(initX + i, initY + i);
@@ -42,7 +42,7 @@ void DiagonalLine::print(int initX, int initY, int k) const {
 }
 
 AntiDiagonalLine::AntiDiagonalLine(int endX, int endY): Line(endX, endY) {}
-void AntiDiagonalLine::print(int initX, int initY, int k) const {
+void AntiDiagonalLine::print(int initX, int initY, double k) const {
     int i;
     for(i = 0; i <= endX * k; i++) {
         setpos(initX - i, initY + i);
@@ -53,7 +53,7 @@ void AntiDiagonalLine::print(int initX, int initY, int k) const {
 
 ObliqueLine::ObliqueLine(int endX, int endY):
     Line(endX, endY), theta(atan((double)endY/endX) ) {}
-void ObliqueLine::print(int initX, int initY, int k) const {
+void ObliqueLine::print(int initX, int initY, double k) const {
     if(endX > endY)
       for(int x = 0; x <= endX * k; x++) {
           setpos(initX + x + 0.5, initY + x*tan(theta) + 0.5);
@@ -68,7 +68,7 @@ void ObliqueLine::print(int initX, int initY, int k) const {
 
 AntiObliqueLine::AntiObliqueLine(int endX, int endY):
     Line(endX, endY), theta(atan((double)endY/endX) ) {}
-void AntiObliqueLine::print(int initX, int initY, int k) const {
+void AntiObliqueLine::print(int initX, int initY, double k) const {
     if(endX > endY)
       for(int x = 0; x <= endX * k; x++) {
           setpos(initX - x + 0.5, initY + x*tan(theta) + 0.5);
@@ -84,7 +84,7 @@ void AntiObliqueLine::print(int initX, int initY, int k) const {
 
 CircleArc::CircleArc(int begDeg, int endDeg, int rad):
     begDeg(begDeg), endDeg(endDeg), rad(rad) {}
-void CircleArc::print(int x0, int y0, int k) const {
+void CircleArc::print(int x0, int y0, double k) const {
     int i;
     for(i = begDeg; i <= endDeg; i++) {
         setpos(x0 + k*rad*sin(i*PI/180.0) + 0.5, y0 - k*rad*cos(i*PI/180.0) + 0.5);

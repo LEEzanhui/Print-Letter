@@ -60,9 +60,11 @@ void letterMode() {
     getch();
 }
 
+void test();
 int main(int argc, char const *argv[]) {
-    cout << "»¶Ó­";
-    Sleep(500);
+    test();
+    /*
+    cout << "ï¿½ï¿½Ó­";
     system("cls");
 
     while(1) {
@@ -79,17 +81,46 @@ int main(int argc, char const *argv[]) {
             letterMode();
         }
     }
+    */
 
 
     return 0;
 }
-
-/*
+void test() {
     // setpos(3, 1);
-     AlphaZ a;
-     a.print(0, 0, 3);
-    // AlphaO a;
-    // a.print(0, 0, 1);
+
+    AlphaS s1;
+    s1.print(0, 0, 1);
+
+    AlphaY y;
+    y.print(11, 0, 1);
+
+    AlphaS s2;
+    s2.print(22, 0, 1);
+
+    AlphaU u;
+    u.print(33, 0, 1);
+
+    AlphaL l;
+    l.print(0, 10, 1);
+
+    AlphaZ z;
+    z.print(11, 10, 1);
+
+    AlphaH h;
+    h.print(22, 10, 1);
+
+    AlphaO o;
+    o.print(44, 0, 1);
+
+    AlphaK k;
+    k.print(55, 0, 1);
+
+
+
+
+
+
     // AntiDiagonalLine line2(4, 4);
     // line2.print(8, 0, 2);
     // AntiObliqueLine line1(4, 2);
@@ -103,5 +134,6 @@ int main(int argc, char const *argv[]) {
     // Circle circle1(5);
     // circle1.print(10, 10, 1);
 
-     setpos(20, 20);
-*/
+    setpos(20, 20);
+
+}
