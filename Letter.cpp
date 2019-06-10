@@ -200,3 +200,18 @@ void AlphaZ::print(int x, int y, double k) const {
     patterns[1]->print(x+9*k, y+1*k, k);
     patterns[2]->print(x+1*k, y+9*k, k);
 }
+
+Star::Star() {
+    patterns.push_back( new ObliqueLine( (cos(54*PI/180.0))*20, (-0.5-(1))*16*(-1) ) );
+    patterns.push_back( new ObliqueLine( (cos(54*PI/180.0)-( -cos(18*PI/180.0) ))*20, (-0.5-(sin(18*PI/180.0) ))*20*(-1) ) );
+    patterns.push_back( new AntiObliqueLine( (cos(54*PI/180.0))*20, (-0.5-(1))*16*(-1) ) );
+    patterns.push_back( new AntiObliqueLine( (cos(54*PI/180.0)-( -cos(18*PI/180.0) ))*20, (-0.5-(sin(18*PI/180.0) ))*20*(-1) ) );
+    patterns.push_back( new HorizonLine( cos(18*PI/180.0)*2*20, 0) );
+}
+void Star::print(int x, int y, double k) const {
+    patterns[0]->print(x, y+1*k, k);
+    patterns[1]->print(x+(-cos(18*PI/180.0))*k*20, y+(0.5)*k*20, k );
+    patterns[2]->print(x, y+1*k, k);
+    patterns[3]->print(x+(cos(18*PI/180.0))*k*20, y+(0.5)*k*20, k );
+    patterns[4]->print(x+(-cos(18*PI/180.0))*k*20, y+(0.5)*k*20, k );
+}

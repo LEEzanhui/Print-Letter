@@ -3,6 +3,7 @@
 #include <vector>
 #include "Line.cpp"
 
+
 class Figure: public Pattern {
 public:
     void print(int initX, int initY, double k) const =0;
@@ -117,6 +118,12 @@ public:
 class AlphaZ: public Figure {
 public:
     AlphaZ();
+    void print(int x, int y, double k) const;
+};
+
+class Star: public Figure {
+public:
+    Star();
     void print(int x, int y, double k) const;
 };
 
