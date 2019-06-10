@@ -162,7 +162,7 @@ void figureMode() {
     cout << "1 circle" << '\n';
     cout << "2 star" << '\n';
     while(1) {
-        char fig = legalInput(1, 5);
+        char fig = legalInput(1, 2);
 
         if(fig == '\x1B') {
             break;
@@ -171,16 +171,17 @@ void figureMode() {
         switch( fig-'0' ) {
             case 1:{
                 AlphaO o;
-                o.print(44, 0, 1);
+                o.print(30, 3, 1);
                 }
                 break;
             case 2:{
                 Star s;
-                s.print(40, 40, 1);
+                s.print(30, 3, 1);
                 }
                 break;
             default:break;
         }
+
     }
 }
 

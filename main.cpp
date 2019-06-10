@@ -11,10 +11,11 @@ int main(int argc, char const *argv[]) {
     //system("cls");
 
     while(1) {
-        cout << "Model 1" << '\n';
+        cout << "Module 1" << '\n';
         cout << "    print some figures" << '\n';
-        cout << "Model 2" << '\n';
+        cout << "Module 2" << '\n';
         cout << "    print some letters" << '\n';
+        cout << '\n' << "enter number to choose the module" << '\n';
         char input = legalInput(1, 2);
 
         if(input-'0' == 1) {
