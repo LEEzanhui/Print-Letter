@@ -3,6 +3,90 @@
 
 //print x0+xi*k
 
+AlphaA::AlphaA() {
+    patterns.push_back(new AntiObliqueLine(4, 8) );
+    patterns.push_back(new ObliqueLine(4, 8) );
+    patterns.push_back(new HorizonLine(4, 0) );
+}
+void AlphaA::print(int x, int y, double k) const {
+    patterns[0]->print(x+5*k, y+1*k, k);
+    patterns[1]->print(x+5*k, y+1*k, k);
+    patterns[2]->print(x+3*k, y+5*k, k);
+}
+
+AlphaB::AlphaB() {
+    patterns.push_back(new VerticalLine(0, 8) );
+    patterns.push_back(new HorizonLine(3, 0) );
+    patterns.push_back(new HorizonLine(3, 0) );
+    patterns.push_back(new HorizonLine(3, 0) );
+    patterns.push_back(new CircleArc(0, 180, 2) );
+    patterns.push_back(new CircleArc(0, 180, 2) );
+}
+void AlphaB::print(int x, int y, double k) const {
+    patterns[0]->print(x+1*k, y+1*k, k);
+    patterns[1]->print(x+2*k, y+1*k, k);
+    patterns[2]->print(x+2*k, y+5*k, k);
+    patterns[3]->print(x+2*k, y+9*k, k);
+    patterns[4]->print(x+6*k, y+3*k, k);
+    patterns[5]->print(x+6*k, y+7*k, k);
+}
+
+AlphaC::AlphaC() {
+    patterns.push_back(new CircleArc(0, 30, 4) );
+    patterns.push_back(new CircleArc(120, 360, 4) );
+}
+void AlphaC::print(int x, int y, double k) const {
+    patterns[0]->print(x+5*k, y+5*k, k);
+    patterns[1]->print(x+5*k, y+5*k, k);
+}
+
+AlphaD::AlphaD() {
+    patterns.push_back(new VerticalLine(0, 8) );
+    patterns.push_back(new HorizonLine(2, 0) );
+    patterns.push_back(new CircleArc(0, 180, 4) );
+    patterns.push_back(new HorizonLine(2, 0) );
+}
+void AlphaD::print(int x, int y, double k) const {
+    patterns[0]->print(x+1*k, y+1*k, k);
+    patterns[1]->print(x+1*k, y+1*k, k);
+    patterns[2]->print(x+4*k, y+5*k, k);
+    patterns[3]->print(x+1*k, y+9*k, k);
+}
+
+AlphaE::AlphaE() {
+    patterns.push_back(new HorizonLine(8, 0) );
+    patterns.push_back(new VerticalLine(0, 8) );
+    patterns.push_back(new HorizonLine(8, 0) );
+    patterns.push_back(new HorizonLine(7, 0) );
+}
+void AlphaE::print(int x, int y, double k) const {
+    patterns[0]->print(x+1*k, y+1*k, k);
+    patterns[1]->print(x+1*k, y+1*k, k);
+    patterns[2]->print(x+1*k, y+9*k, k);
+    patterns[3]->print(x+1*k, y+5*k, k);
+}
+
+AlphaF::AlphaF() {
+    patterns.push_back(new HorizonLine(8, 0) );
+    patterns.push_back(new VerticalLine(0, 8) );
+    patterns.push_back(new HorizonLine(7, 0) );
+}
+void AlphaF::print(int x, int y, double k) const {
+    patterns[0]->print(x+1*k, y+1*k, k);
+    patterns[1]->print(x+1*k, y+1*k, k);
+    patterns[2]->print(x+1*k, y+5*k, k);
+}
+
+AlphaG::AlphaG() {
+    patterns.push_back(new CircleArc(0, 60, 4) );
+    patterns.push_back(new CircleArc(120, 360, 4) );
+    patterns.push_back(new HorizonLine(3, 0) );
+}
+void AlphaG::print(int x, int y, double k) const {
+    patterns[0]->print(x+5*k, y+5*k, k);
+    patterns[1]->print(x+5*k, y+5*k, k);
+    patterns[2]->print(x+5*k, y+6*k, k);
+}
 
 AlphaH::AlphaH() {
     patterns.push_back(new VerticalLine(0, 8) );
@@ -13,6 +97,28 @@ void AlphaH::print(int x, int y, double k) const {
     patterns[0]->print(x+1*k, y+1*k, k);
     patterns[1]->print(x+9*k, y+1*k, k);
     patterns[2]->print(x+1*k, y+5*k, k);
+}
+
+AlphaI::AlphaI() {
+    patterns.push_back(new HorizonLine(4, 0) );
+    patterns.push_back(new VerticalLine(0, 8) );
+    patterns.push_back(new HorizonLine(4, 0) );
+}
+void AlphaI::print(int x, int y, double k) const {
+    patterns[0]->print(x+3*k, y+1*k, k);
+    patterns[1]->print(x+5*k, y+1*k, k);
+    patterns[2]->print(x+3*k, y+9*k, k);
+}
+
+AlphaJ::AlphaJ() {
+    patterns.push_back(new HorizonLine(6, 0) );
+    patterns.push_back(new VerticalLine(0, 5) );
+    patterns.push_back(new CircleArc(90, 250, 2) );
+}
+void AlphaJ::print(int x, int y, double k) const {
+    patterns[0]->print(x+2*k, y+1*k, k);
+    patterns[1]->print(x+5*k, y+1*k, k);
+    patterns[2]->print(x+3*k, y+7*k, k);
 }
 
 AlphaK::AlphaK() {
@@ -51,6 +157,15 @@ void AlphaS::print(int x, int y, double k) const {
     patterns[0]->print(x+5*k, y+3*k, k);
     patterns[1]->print(x+5*k, y+3*k, k);
     patterns[2]->print(x+5*k, y+7*k, k);
+}
+
+AlphaT::AlphaT() {
+    patterns.push_back(new HorizonLine(8, 0) );
+    patterns.push_back(new VerticalLine(0, 8) );
+}
+void AlphaT::print(int x, int y, double k) const {
+    patterns[0]->print(x+1*k, y+1*k, k);
+    patterns[1]->print(x+5*k, y+1*k, k);
 }
 
 AlphaU::AlphaU() {

@@ -91,7 +91,7 @@ void figureMode() {
 
 void letterMode() {
     cout << "choose which letter you want to..." << '\n';
-    cout << "L Y K N B" << '\n';
+    cout << "L Z H N B" << '\n';
 
     string str;
     cin >> str;
@@ -124,11 +124,11 @@ void letterMode() {
 
 void test();
 int main(int argc, char const *argv[]) {
-    //test();
+    test();
 
     //cout << "welcome";
     //system("cls");
-
+/*
     while(1) {
         cout << "Model 1" << '\n';
         cout << "    print some figures" << '\n';
@@ -143,7 +143,7 @@ int main(int argc, char const *argv[]) {
             letterMode();
         }
     }
-
+*/
     return 0;
 }
 void test() {
@@ -162,13 +162,13 @@ void test() {
     u.print(33, 0, 1);
 
     AlphaL l;
-    l.print(0, 10, 1);
+    l.print(0, 11, 1);
 
     AlphaZ z;
-    z.print(11, 10, 1);
+    z.print(11, 11, 1);
 
     AlphaH h;
-    h.print(22, 10, 1);
+    h.print(22, 11, 1);
 
     AlphaO o;
     o.print(44, 0, 1);
@@ -176,10 +176,35 @@ void test() {
     AlphaK k;
     k.print(55, 0, 1);
 
+    AlphaJ j;
+    z.print(66, 0, 1);
 
+    AlphaA a;
+    a.print(77, 0, 1);
 
+    AlphaB b;
+    b.print(88, 0, 1);
 
+    AlphaC c;
+    c.print(99, 0, 1);
 
+    AlphaD d;
+    d.print(33, 11, 1);
+
+    AlphaE e;
+    e.print(44, 11, 1);
+
+    AlphaF f;
+    f.print(55, 11, 1);
+
+    AlphaG g;
+    g.print(66, 11, 1);
+
+    AlphaI i;
+    i.print(77, 11, 1);
+
+    AlphaT t;
+    t.print(88, 11, 1);
 
     // AntiDiagonalLine line2(4, 4);
     // line2.print(8, 0, 2);

@@ -11,9 +11,64 @@ protected:
     std::vector<Pattern *> patterns;
 };
 //standard size of the framework is 11*11, with the Letter size is 9*9
+
+class AlphaA: public Figure {
+public:
+    AlphaA();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaB: public Figure {
+public:
+    AlphaB();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaC: public Figure {
+public:
+    AlphaC();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaD: public Figure {
+public:
+    AlphaD();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaE: public Figure {
+public:
+    AlphaE();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaF: public Figure {
+public:
+    AlphaF();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaG: public Figure {
+public:
+    AlphaG();
+    void print(int x, int y, double k) const;
+};
+
 class AlphaH: public Figure {
 public:
     AlphaH();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaI: public Figure {
+public:
+    AlphaI();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaJ: public Figure {
+public:
+    AlphaJ();
     void print(int x, int y, double k) const;
 };
 
@@ -38,6 +93,12 @@ public:
 class AlphaS: public Figure {
 public:
     AlphaS();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaT: public Figure {
+public:
+    AlphaT();
     void print(int x, int y, double k) const;
 };
 
