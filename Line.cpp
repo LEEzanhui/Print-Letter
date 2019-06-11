@@ -1,5 +1,7 @@
 #include "Line.hpp"
 
+using namespace std;
+
 //x: col, y: row
 void setpos(short int x, short int y) {
     COORD point={x,y};
@@ -21,6 +23,11 @@ void HorizonLine::print(int initX, int initY, double k) const {
         std::cout << fChar;
     }
 };
+void HorizonLine::printInfo(int initX, int initY, double k) const {
+    cout << "    HorizonLine: from [" << initX << "," << initY
+        << "] to [" << initX + endX*k << "," << initY + endY*k
+        << "]" << '\n';
+}
 
 VerticalLine::VerticalLine(int endX, int endY): Line(0, endY) {}
 void VerticalLine::print(int initX, int initY, double k) const {
@@ -29,6 +36,11 @@ void VerticalLine::print(int initX, int initY, double k) const {
         setpos(initX, initY + i);
         std::cout << fChar;
     }
+}
+void VerticalLine::printInfo(int initX, int initY, double k) const {
+    cout << "    VerticalLine: from [" << initX << "," << initY
+        << "] to [" << initX + endX*k << "," << initY + endY*k
+        << "]" << '\n';
 }
 
 
@@ -40,6 +52,11 @@ void DiagonalLine::print(int initX, int initY, double k) const {
         std::cout << fChar;
     }
 }
+void DiagonalLine::printInfo(int initX, int initY, double k) const {
+    cout << "    DiagonalLine: from [" << initX << "," << initY
+        << "] to [" << initX + endX*k << "," << initY + endY*k
+        << "]" << '\n';
+}
 
 AntiDiagonalLine::AntiDiagonalLine(int endX, int endY): Line(endX, endY) {}
 void AntiDiagonalLine::print(int initX, int initY, double k) const {
@@ -48,6 +65,11 @@ void AntiDiagonalLine::print(int initX, int initY, double k) const {
         setpos(initX - i, initY + i);
         std::cout << fChar;
     }
+}
+void AntiDiagonalLine::printInfo(int initX, int initY, double k) const {
+    cout << "    AntiDiagonalLine: from [" << initX << "," << initY
+        << "] to [" << initX - endX*k << "," << initY + endY*k
+        << "]" << '\n';
 }
 
 
@@ -65,6 +87,15 @@ void ObliqueLine::print(int initX, int initY, double k) const {
         std::cout << fChar;
     }
 }
+void ObliqueLine::printInfo(int initX, int initY, double k) const {
+    cout << "    ObliqueLine: from [" << initX << "," << initY
+        << "] to [" ;
+    if(endX > endY)
+        cout << initX + endX*k + 0.5 <<"," << initY + endX*k*tan(theta) + 0.5;
+    else
+        cout << initX + endY*k/tan(theta) + 0.5 << "," << initY + endY*k + 0.5;
+    cout << "]" << '\n';
+}
 
 AntiObliqueLine::AntiObliqueLine(int endX, int endY):
     Line(endX, endY), theta(atan((double)endY/endX) ) {}
@@ -80,6 +111,15 @@ void AntiObliqueLine::print(int initX, int initY, double k) const {
         std::cout << fChar;
     }
 }
+void AntiObliqueLine::printInfo(int initX, int initY, double k) const {
+    cout << "    AntiObliqueLine: from [" << initX << "," << initY
+        << "] to [" ;
+    if(endX > endY)
+        cout << initX - endX*k + 0.5 <<"," << initY + endX*k*tan(theta) + 0.5;
+    else
+        cout << initX - endY*k/tan(theta) + 0.5 << "," << initY + endY*k + 0.5;
+    cout << "]" << '\n';
+}
 
 
 CircleArc::CircleArc(int begDeg, int endDeg, int rad):
@@ -91,5 +131,11 @@ void CircleArc::print(int x0, int y0, double k) const {
         std::cout << fChar;
     }
 }
+void CircleArc::printInfo(int initX, int initY, double k) const {
+    cout << "    CircleArc: origin [" << initX << "," << initY
+        << "] begin degree:" << begDeg << " end degree:"
+        << endDeg << " rad:" << rad << '\n';
+}
+
 
 Circle::Circle(int rad): CircleArc(0, 360, rad) {}
