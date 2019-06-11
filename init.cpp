@@ -7,64 +7,93 @@ using namespace std;
 
 void test() {
     // setpos(3, 1);
-
+    char input;
+    double k=1;
+    while(cin >> input) {
+        system("cls");
+        /*
     AlphaS s1;
-    s1.print(0, 0, 1);
+    s1.print(0*k, 0, k);
 
     AlphaY y;
-    y.print(11, 0, 1);
+    y.print(11*k, 0, k);
 
     AlphaS s2;
-    s2.print(22, 0, 1);
+    s2.print(22*k, 0, k);
 
     AlphaU u;
-    u.print(33, 0, 1);
+    u.print(33*k, 0, k);
 
     AlphaL l;
-    l.print(0, 11, 1);
+    l.print(0*k, 11, k);
 
     AlphaZ z;
-    z.print(11, 11, 1);
+    z.print(11*k, 11, k);
 
     AlphaH h;
-    h.print(22, 11, 1);
+    h.print(22*k, 11, k);
 
     AlphaO o;
-    o.print(44, 0, 1);
+    o.print(44*k, 0, k);
 
-    AlphaK k;
-    k.print(55, 0, 1);
+    AlphaK k1;
+    k1.print(55*k, 0, k);
 
     AlphaJ j;
-    z.print(66, 0, 1);
-
+    z.print(66*k, 0, k);
     AlphaA a;
-    a.print(77, 0, 1);
-
+    a.print(0*k, 0, k);
+*/
     AlphaB b;
-    b.print(88, 0, 1);
-
+    b.print(44*k, 0, k);
+/*
     AlphaC c;
-    c.print(99, 0, 1);
+    c.print(22*k, 0, k);
 
     AlphaD d;
-    d.print(33, 11, 1);
+    d.print(0*k, 11, k);
 
     AlphaE e;
-    e.print(44, 11, 1);
+    e.print(11*k, 11, k);
 
     AlphaF f;
-    f.print(55, 11, 1);
+    f.print(22*k, 11, k);
 
     AlphaG g;
-    g.print(66, 11, 1);
+    g.print(33*k, 11, k);
 
     AlphaI i;
-    i.print(77, 11, 1);
+    i.print(44*k, 11, k);
 
+    */
     AlphaT t;
-    t.print(88, 11, 1);
+    t.print(0*k, 11, k);
 
+    AlphaM m;
+    m.print(11*k, 11, k);
+
+    AlphaN n;
+    n.print(0*k, 22, k);
+
+    AlphaP p;
+    p.print(11*k, 22, k);
+
+    AlphaR r;
+    r.print(22*k, 22, k);
+
+    AlphaV v;
+    v.print(33*k, 22, k);
+
+    AlphaW w;
+    w.print(44*k, 22, k);
+
+    AlphaX x;
+    x.print(55*k, 22, k);
+    /*
+    */
+    if(input == 'k') k*= 1.1;
+}
+/*
     // AntiDiagonalLine line2(4, 4);
     // line2.print(8, 0, 2);
     // AntiObliqueLine line1(4, 2);
@@ -77,7 +106,7 @@ void test() {
     // line1.print(0, 10, 1);
     // Circle circle1(5);
     // circle1.print(10, 10, 1);
-
+*/
     setpos(20, 20);
 
 }

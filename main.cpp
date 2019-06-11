@@ -5,11 +5,9 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    //test();
-
+    // test();
     //cout << "welcome";
     //system("cls");
-
     while(1) {
         cout << "Module 1" << '\n';
         cout << "    print some figures" << '\n';
@@ -25,6 +23,5 @@ int main(int argc, char const *argv[]) {
             letterMode();
         }
     }
-
     return 0;
 }

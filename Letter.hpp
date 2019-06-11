@@ -85,9 +85,33 @@ public:
     void print(int x, int y, double k) const;
 };
 
+class AlphaM: public Figure {
+public:
+    AlphaM();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaN: public Figure {
+public:
+    AlphaN();
+    void print(int x, int y, double k) const;
+};
+
 class AlphaO: public Figure {
 public:
     AlphaO();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaP: public Figure {
+public:
+    AlphaP();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaR: public Figure {
+public:
+    AlphaR();
     void print(int x, int y, double k) const;
 };
 
@@ -106,6 +130,24 @@ public:
 class AlphaU: public Figure {
 public:
     AlphaU();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaV: public Figure {
+public:
+    AlphaV();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaW: public Figure {
+public:
+    AlphaW();
+    void print(int x, int y, double k) const;
+};
+
+class AlphaX: public Figure {
+public:
+    AlphaX();
     void print(int x, int y, double k) const;
 };
 
