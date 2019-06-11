@@ -300,6 +300,21 @@ void AlphaP::printInfo(int x, int y, double k) const {
     patterns[3]->printInfo(x+2*k, y+5*k, k);
 }
 
+AlphaQ::AlphaQ() {
+    patterns.push_back(new CircleArc(0, 360, 4) );
+    patterns.push_back(new ObliqueLine(3, 2) );
+}
+void AlphaQ::print(int x, int y, double k) const {
+    patterns[0]->print(x+5*k, y+5*k, k);
+    patterns[1]->print(x+6*k, y+7*k, k);
+}
+void AlphaQ::printInfo(int x, int y, double k) const {
+    cout << "AlphaQ: [" << x << "," << y << "]" << '\n';
+
+    patterns[0]->printInfo(x+5*k, y+5*k, k);
+    patterns[1]->printInfo(x+6*k, y+7*k, k);
+}
+
 AlphaR::AlphaR() {
     patterns.push_back(new VerticalLine(0, 8) );
     patterns.push_back(new HorizonLine(4, 0) );

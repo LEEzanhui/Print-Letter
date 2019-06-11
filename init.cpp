@@ -149,7 +149,6 @@ void printLetter(int initX, int initY, string str, int i, double k, bool isPrint
                 p.printInfo(initX, initY, k);
             }
             break;
-/*
         case 'q':{
             AlphaQ q;
             if(isPrint == false)
@@ -158,7 +157,6 @@ void printLetter(int initX, int initY, string str, int i, double k, bool isPrint
                 q.printInfo(initX, initY, k);
             }
             break;
-*/
         case 'r':{
             AlphaR r;
             if(isPrint == false)

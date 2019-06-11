@@ -125,6 +125,13 @@ public:
     void printInfo(int initX, int initY, double k) const;
 };
 
+class AlphaQ: public Figure {
+public:
+    AlphaQ();
+    void print(int x, int y, double k) const;
+    void printInfo(int initX, int initY, double k) const;
+};
+
 class AlphaR: public Figure {
 public:
     AlphaR();
