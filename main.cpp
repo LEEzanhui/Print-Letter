@@ -5,7 +5,6 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    // test();
     //cout << "welcome";
     //system("cls");
     while(1) {
