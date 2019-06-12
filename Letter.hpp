@@ -199,7 +199,7 @@ class Star: public Figure {
 public:
     Star();
     void print(int x, int y, double k) const;
-    void printInfo(int initX, int initY, double k) const {}
+    void printInfo(int x, int y, double k) const {}
 };
 
 

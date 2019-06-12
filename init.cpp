@@ -250,7 +250,7 @@ bool shift(int* PinitX, int* PinitY, double* PsizeLe, bool* PisPrint) {
             return true;
         case 77:(*PinitX)++;
             return true;
-        case 'p':*PisPrint = true;
+        case 'e':*PisPrint = true;
             return true;
     }
 }
@@ -260,7 +260,10 @@ void figureMode() {
     cout << "1 circle" << '\n';
     cout << "2 star" << '\n';
     while(1) {
+
         char fig = legalInput(1, 2);
+
+        cout << "press esc to return" << '\n';
 
         if(fig == '\x1B') {
             break;
@@ -269,7 +272,7 @@ void figureMode() {
         switch( fig-'0' ) {
             case 1:{
                 Circle circle(10);
-                circle.print(30, 3, 1);
+                circle.print(30, 12, 1);
                 }
                 break;
             case 2:{
@@ -303,7 +306,8 @@ void letterMode() {
         system("cls");
 
         if(isPrint == false) {
-            cout << "direction keys control the position, a/d key control the size" << '\n';
+            cout << "Direction keys control the position, a/d key control the size" << '\n';
+            cout << "press 'e' to print the information of the letters" << '\n';
         }
         cout << "press esc to return" << '\n' << '\n';
 
