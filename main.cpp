@@ -8,6 +8,8 @@ int main(int argc, char const *argv[]) {
     //cout << "welcome";
     //system("cls");
     while(1) {
+        system( "cls" );
+
         cout << "Module 1" << '\n';
         cout << "    print some figures" << '\n';
         cout << "Module 2" << '\n';

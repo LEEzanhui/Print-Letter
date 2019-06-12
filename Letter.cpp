@@ -144,7 +144,7 @@ void AlphaG::printInfo(int x, int y, double k) const {
 AlphaH::AlphaH() {
     patterns.push_back(new VerticalLine(0, 8) );
     patterns.push_back(new VerticalLine(0, 8) );
-    patterns.push_back(new HorizonLine(7, 0) );
+    patterns.push_back(new HorizonLine(8, 0) );
 }
 void AlphaH::print(int x, int y, double k) const {
     patterns[0]->print(x+1*k, y+1*k, k);

@@ -202,6 +202,4 @@ public:
     void printInfo(int x, int y, double k) const {}
 };
 
-
-
 #endif /* end of include guard: LETTER_HPP */
