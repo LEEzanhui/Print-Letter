@@ -6,50 +6,13 @@
 using std::cout;
 using std::cin;
 
-void figureMode();
 void letterMode();
     void printLetter(int initX, int initY, char ch, double scale, bool printInfo);
+void figureMode();
 
 bool shift(int *PinitX, int *PinitY, double *scalePtr, bool *printInfoPtr);
 char legalInput(int min, int max);
 
-void figureMode() {
-    cout << "We have finished two figures' design, " << '\n';
-    cout << "you can choose to print:" << '\n';
-    cout << "1 circle" << '\n';
-    cout << "2 star" << '\n';
-    char fig = legalInput(1, 2);
-
-    double scale = 1.0;
-    int initX = 30, initY = 10;
-
-    if(fig == '\x1B') {
-        return;
-    }
-
-    bool flag = true;
-    while(flag) {
-        system("cls");
-        cout << "press esc to return" << '\n';
-
-        switch(fig - '0') {
-            case 1:{
-                Circle circle(10*scale);
-                circle.print(initX, initY, scale);
-                }
-                break;
-            case 2:{
-                Star s;
-                s.print(initX, initY, scale);
-                }
-                break;
-            default:
-                break;
-        }
-        bool useless;
-        flag = shift(&initX, &initY, &scale, &useless);
-    }
-}
 
 void letterMode() {
     cout << "You can print any letters as you wants, such as \"TA TQL\"" << '\n';
@@ -309,6 +272,44 @@ void printLetter(int initX, int initY, char ch, double scale, bool printInfo) {
         break;
     }
 }
+void figureMode() {
+    cout << "We have finished two figures' design, " << '\n';
+    cout << "you can choose to print:" << '\n';
+    cout << "1 circle" << '\n';
+    cout << "2 star" << '\n';
+    char fig = legalInput(1, 2);
+
+    double scale = 1.0;
+    int initX = 30, initY = 10;
+
+    if(fig == '\x1B') {
+        return;
+    }
+
+    bool flag = true;
+    while(flag) {
+        system("cls");
+        cout << "press esc to return" << '\n';
+
+        switch(fig - '0') {
+            case 1:{
+                Circle circle(10*scale);
+                circle.print(initX, initY, scale);
+                }
+                break;
+            case 2:{
+                Star s;
+                s.print(initX, initY, scale);
+                }
+                break;
+            default:
+                break;
+        }
+        bool useless;
+        flag = shift(&initX, &initY, &scale, &useless);
+    }
+}
+
 bool shift(int* PinitX, int* PinitY, double* scalePtr, bool* printInfoPtr) {
     char ch = getch();
 
@@ -331,7 +332,6 @@ bool shift(int* PinitX, int* PinitY, double* scalePtr, bool* printInfoPtr) {
         return true;
     }
 }
-
 char legalInput(int min, int max) {
     char input;
     input = getch();
