@@ -19,6 +19,8 @@ void AlphaA::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+5*k, y+1*k, k);
     patterns[1]->printInfo(x+5*k, y+1*k, k);
     patterns[2]->printInfo(x+3*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaB::AlphaB() {
@@ -46,6 +48,8 @@ void AlphaB::printInfo(int x, int y, double k) const {
     patterns[3]->printInfo(x+1*k, y+9*k, k);
     patterns[4]->printInfo(x+6*k, y+3*k, k);
     patterns[5]->printInfo(x+6*k, y+7*k, k);
+
+    cout << '\n';
 }
 
 AlphaC::AlphaC() {
@@ -61,6 +65,8 @@ void AlphaC::printInfo(int x, int y, double k) const {
 
     patterns[0]->printInfo(x+5*k, y+5*k, k);
     patterns[1]->printInfo(x+5*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaD::AlphaD() {
@@ -82,6 +88,8 @@ void AlphaD::printInfo(int x, int y, double k) const {
     patterns[1]->printInfo(x+1*k, y+1*k, k);
     patterns[2]->printInfo(x+4*k, y+5*k, k);
     patterns[3]->printInfo(x+1*k, y+9*k, k);
+
+    cout << '\n';
 }
 
 AlphaE::AlphaE() {
@@ -103,6 +111,8 @@ void AlphaE::printInfo(int x, int y, double k) const {
     patterns[1]->printInfo(x+1*k, y+1*k, k);
     patterns[2]->printInfo(x+1*k, y+9*k, k);
     patterns[3]->printInfo(x+1*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaF::AlphaF() {
@@ -121,6 +131,8 @@ void AlphaF::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+1*k, y+1*k, k);
     patterns[2]->printInfo(x+1*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaG::AlphaG() {
@@ -139,6 +151,8 @@ void AlphaG::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+5*k, y+5*k, k);
     patterns[1]->printInfo(x+5*k, y+5*k, k);
     patterns[2]->printInfo(x+5*k, y+6*k, k);
+
+    cout << '\n';
 }
 
 AlphaH::AlphaH() {
@@ -157,6 +171,8 @@ void AlphaH::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+9*k, y+1*k, k);
     patterns[2]->printInfo(x+1*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaI::AlphaI() {
@@ -175,6 +191,8 @@ void AlphaI::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+3*k, y+1*k, k);
     patterns[1]->printInfo(x+5*k, y+1*k, k);
     patterns[2]->printInfo(x+3*k, y+9*k, k);
+
+    cout << '\n';
 }
 
 AlphaJ::AlphaJ() {
@@ -193,6 +211,8 @@ void AlphaJ::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+2*k, y+1*k, k);
     patterns[1]->printInfo(x+5*k, y+1*k, k);
     patterns[2]->printInfo(x+3*k, y+7*k, k);
+
+    cout << '\n';
 }
 
 AlphaK::AlphaK() {
@@ -211,6 +231,8 @@ void AlphaK::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+8*k, y+1*k, k);
     patterns[2]->printInfo(x+1*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaL::AlphaL() {
@@ -226,6 +248,8 @@ void AlphaL::printInfo(int x, int y, double k) const {
 
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+1*k, y+9*k, k);
+
+    cout << '\n';
 }
 
 AlphaM::AlphaM() {
@@ -247,6 +271,8 @@ void AlphaM::printInfo(int x, int y, double k) const {
     patterns[1]->printInfo(x+1*k, y+1*k, k);
     patterns[2]->printInfo(x+9*k, y+1*k, k);
     patterns[3]->printInfo(x+9*k, y+1*k, k);
+
+    cout << '\n';
 }
 
 AlphaN::AlphaN() {
@@ -265,6 +291,8 @@ void AlphaN::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+1*k, y+1*k, k);
     patterns[2]->printInfo(x+9*k, y+1*k, k);
+
+    cout << '\n';
 }
 
 AlphaO::AlphaO() {
@@ -277,6 +305,8 @@ void AlphaO::printInfo(int x, int y, double k) const {
     cout << "AlphaO: [" << x << "," << y << "]" << '\n';
 
     patterns[0]->printInfo(x+5*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaP::AlphaP() {
@@ -298,6 +328,8 @@ void AlphaP::printInfo(int x, int y, double k) const {
     patterns[1]->printInfo(x+2*k, y+1*k, k);
     patterns[2]->printInfo(x+6*k, y+3*k, k);
     patterns[3]->printInfo(x+2*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaQ::AlphaQ() {
@@ -313,6 +345,8 @@ void AlphaQ::printInfo(int x, int y, double k) const {
 
     patterns[0]->printInfo(x+5*k, y+5*k, k);
     patterns[1]->printInfo(x+6*k, y+7*k, k);
+
+    cout << '\n';
 }
 
 AlphaR::AlphaR() {
@@ -337,6 +371,8 @@ void AlphaR::printInfo(int x, int y, double k) const {
     patterns[2]->printInfo(x+5*k, y+3*k, k);
     patterns[3]->printInfo(x+1*k, y+5*k, k);
     patterns[4]->printInfo(x+1*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaS::AlphaS() {
@@ -367,6 +403,8 @@ void AlphaS::printInfo(int x, int y, double k) const {
     patterns[4]->printInfo(x+6*k, y+7*k, k);
     patterns[5]->printInfo(x+4*k, y+9*k, k);
     patterns[6]->printInfo(x+4*k, y+7*k, k);
+
+    cout << '\n';
 }
 
 AlphaT::AlphaT() {
@@ -382,6 +420,8 @@ void AlphaT::printInfo(int x, int y, double k) const {
 
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+5*k, y+1*k, k);
+
+    cout << '\n';
 }
 
 AlphaU::AlphaU() {
@@ -400,6 +440,8 @@ void AlphaU::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+5*k, y+5*k, k);
     patterns[2]->printInfo(x+9*k, y+1*k, k);
+
+    cout << '\n';
 }
 
 AlphaV::AlphaV() {
@@ -415,6 +457,8 @@ void AlphaV::printInfo(int x, int y, double k) const {
 
     patterns[0]->printInfo(x+1*k, y+2*k, k);
     patterns[1]->printInfo(x+9*k, y+2*k, k);
+
+    cout << '\n';
 }
 
 AlphaW::AlphaW() {
@@ -436,6 +480,8 @@ void AlphaW::printInfo(int x, int y, double k) const {
     patterns[1]->printInfo(x+5*k, y+4*k, k);
     patterns[2]->printInfo(x+5*k, y+4*k, k);
     patterns[3]->printInfo(x+9*k, y+1*k, k);
+
+    cout << '\n';
 }
 
 AlphaX::AlphaX() {
@@ -451,6 +497,8 @@ void AlphaX::printInfo(int x, int y, double k) const {
 
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+9*k, y+1*k, k);
+
+    cout << '\n';
 }
 
 AlphaY::AlphaY() {
@@ -469,6 +517,8 @@ void AlphaY::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+9*k, y+1*k, k);
     patterns[2]->printInfo(x+5*k, y+5*k, k);
+
+    cout << '\n';
 }
 
 AlphaZ::AlphaZ() {
@@ -487,6 +537,8 @@ void AlphaZ::printInfo(int x, int y, double k) const {
     patterns[0]->printInfo(x+1*k, y+1*k, k);
     patterns[1]->printInfo(x+9*k, y+1*k, k);
     patterns[2]->printInfo(x+1*k, y+9*k, k);
+
+    cout << '\n';
 }
 
 Star::Star() {
