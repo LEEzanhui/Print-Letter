@@ -18,7 +18,7 @@ public:
     virtual void print(int num1, int num2, double k) const =0;
     virtual void printInfo(int initX, int initY, double k) const =0;
 protected:
-    static char fChar;
+    char fChar;
 };
 
 class Line: public Pattern {
