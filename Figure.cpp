@@ -1,4 +1,4 @@
-#include "Pattern.hpp"
+#include "Figure.hpp"
 #include<windows.h>
 
 //print x0+xi*k

@@ -1,6 +1,6 @@
 #include "Line.hpp"
 
-using namespace std;
+using std::cout;
 
 //x: col, y: row
 void setpos(short int x, short int y) {
@@ -20,7 +20,7 @@ void HorizonLine::print(int initX, int initY, double k) const {
     setpos(initX, initY);
     int i;
     for(i = 0; i <= endX * k; i++) {
-        std::cout << fChar;
+        cout << fChar;
     }
 };
 void HorizonLine::printInfo(int initX, int initY, double k) const {
@@ -34,7 +34,7 @@ void VerticalLine::print(int initX, int initY, double k) const {
     int i;
     for(i = 0; i <= endY * k; i++) {
         setpos(initX, initY + i);
-        std::cout << fChar;
+        cout << fChar;
     }
 }
 void VerticalLine::printInfo(int initX, int initY, double k) const {
@@ -49,7 +49,7 @@ void DiagonalLine::print(int initX, int initY, double k) const {
     int i;
     for(i=0; i <= endX * k; i++) {
         setpos(initX + i, initY + i);
-        std::cout << fChar;
+        cout << fChar;
     }
 }
 void DiagonalLine::printInfo(int initX, int initY, double k) const {
@@ -63,7 +63,7 @@ void AntiDiagonalLine::print(int initX, int initY, double k) const {
     int i;
     for(i = 0; i <= endX * k; i++) {
         setpos(initX - i, initY + i);
-        std::cout << fChar;
+        cout << fChar;
     }
 }
 void AntiDiagonalLine::printInfo(int initX, int initY, double k) const {
@@ -80,11 +80,11 @@ void ObliqueLine::print(int initX, int initY, double k) const {
       for(int x = 0; x <= endX * k; x++) {
           setpos(initX + x + 0.5, initY + x*tan(theta) + 0.5);
           // + 0.5 实现四舍五入
-          std::cout << fChar;
+          cout << fChar;
       }
     else for(int y = 0; y <= endY * k; y++) {
         setpos(initX + y/tan(theta) + 0.5, initY + y + 0.5);
-        std::cout << fChar;
+        cout << fChar;
     }
 }
 void ObliqueLine::printInfo(int initX, int initY, double k) const {
@@ -104,11 +104,11 @@ void AntiObliqueLine::print(int initX, int initY, double k) const {
       for(int x = 0; x <= endX * k; x++) {
           setpos(initX - x + 0.5, initY + x*tan(theta) + 0.5);
           //+0.5 实现四舍五入
-          std::cout << fChar;
+          cout << fChar;
       }
     else for(int y = 0; y <= endY * k; y++) {
         setpos(initX - y/tan(theta) + 0.5, initY + y + 0.5);
-        std::cout << fChar;
+        cout << fChar;
     }
 }
 void AntiObliqueLine::printInfo(int initX, int initY, double k) const {
@@ -139,3 +139,7 @@ void CircleArc::printInfo(int initX, int initY, double k) const {
 
 
 Circle::Circle(int rad): CircleArc(0, 360, rad) {}
+void Circle::printInfo(int initX, int initY, double k) const {
+    cout << "   Circle: origin [" << initX << ',' << initY
+        << "] rad:" << rad << '\n';
+}

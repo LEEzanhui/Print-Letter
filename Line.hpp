@@ -24,8 +24,8 @@ protected:
 class Line: public Pattern {
 public:
     Line(int endX, int endY);
-    virtual void print(int initX, int initY, double k) const =0;
-    virtual void printInfo(int initX, int initY, double k) const =0;
+    void print(int initX, int initY, double k) const =0;
+    void printInfo(int initX, int initY, double k) const =0;
 protected:
     int endX, endY;
 };
@@ -78,13 +78,14 @@ public:
     CircleArc(int begDeg, int endDeg, int rad);
     void print(int x0, int y0, double k) const;
     void printInfo(int initX, int initY, double k) const;
-private:
+protected:
     int begDeg, endDeg, rad;
 };
 
 class Circle: public CircleArc {
 public:
     Circle(int rad);
+    void printInfo(int initX, int initY, double k) const;
 };
 
 

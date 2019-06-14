@@ -1,5 +1,5 @@
-#ifndef LETTER_HPP
-#define LETTER_HPP
+#ifndef FIGURE_HPP
+#define FIGUTR_HPP
 #include <vector>
 #include "Line.cpp"
 
@@ -7,7 +7,7 @@
 class Figure: public Pattern {
 public:
     void print(int initX, int initY, double k) const =0;
-    virtual void printInfo(int initX, int initY, double k) const =0;
+    void printInfo(int initX, int initY, double k) const =0;
 protected:
     std::vector<Pattern *> patterns;
 };
@@ -202,4 +202,4 @@ public:
     void printInfo(int x, int y, double k) const {}
 };
 
-#endif /* end of include guard: LETTER_HPP */
+#endif /* end of include guard: FIGUTE_HPP */
