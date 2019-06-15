@@ -378,10 +378,11 @@ void welcome() {
         printLetter(charX, charY, str[i], 1, false);
         charY += (int)(charX + 1*11) / 110 * 11*1;
         charX = (int)(charX + 1*11) % 110;
+        Sleep(100);
     }
 
 
-    Sleep(5000);
+    Sleep(3000);
     system("cls");
 
     cout << "1";
