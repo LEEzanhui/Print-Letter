@@ -42,7 +42,7 @@ void letterMode() {
     string str;
     getline(cin, str);
 
-//initialize initX and size here
+    //initialize initX and size here
     double scale = 1.0;
     int initX = 0, initY = 3;
     bool flag = true, printInfo = false;
@@ -65,8 +65,8 @@ void letterMode() {
             int charX = initX, charY = initY;
             for(int i=0; i < str.length(); i++ ) {
                 printLetter(charX, charY, str[i], scale, printInfo);
-                charY += (int)(charX + scale*11) / 66 * 11*scale;
-                charX = (int)(charX + scale*11) % 66;
+                charY += (int)(charX + scale*11) / 88 * 11*scale;
+                charX = (int)(charX + scale*11) % 88;
             }
 
             if( printInfo == true ) {
