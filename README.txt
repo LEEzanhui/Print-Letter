@@ -1,7 +1,6 @@
 ﻿Created by nonoli and warpMatrix in 6/2019
-Copyright © 2019 by 李赞辉 and 梁允楷. All Rights Reserved.
+Copyright © 2019 by nonoli and warpMatrix. All Rights Reserved.
 Print-Letter
-项目合作完成者: 李赞辉（18342053） 梁允楷（18342055）
 
 程序说明
 
